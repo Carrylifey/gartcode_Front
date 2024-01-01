@@ -1,13 +1,126 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:ital,wght@0,600;0,700;0,900;1,100&family=Roboto+Slab&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Slab", serif;
+}
+body {
+  background-color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  padding-top: 4%;
+}
+
+.span-text {
+  margin: auto;
+  margin-top: 2%; 
+  font-size: 4rem;
+  color: aliceblue;
+  font-weight: 900;
+}
+.logo {
+  width: 16%;
+  height: auto;
+  transform: translateX(90%);
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.svg-icon {
+  padding-top: 2%;
+  fill: #ffc0cb;
+  transform: translateY(10px);
+  transition: 0.3s ease, transform 0.3s ease;
+}
+
+.gaming {
+  margin-top: 0.5%;
+  color: aliceblue;
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.transition-svg {
+  transition: transform 0.3s ease;
+}
+.span-texty {
+  margin: auto;
+  margin-top: 2%; 
+  font-size: 4rem;
+  color: aliceblue;
+  font-style: normal;
+  transform: translateX(130%);
+}
+.company_text {
+  text-align: center;
+  color: white;
+  background-color: black;
+  margin-bottom: 2%;
+  font-size: 0.8em;
+}
+.company_logo {
+  width: 4%;
+  align-items: center;
+  text-align: center;
+  transform: translateY(45%);
+}
+
+.timer-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 8%;
+}
+
+.timer-value {
+  font-size: 2em;
+  margin: 0 5px;
+  color: white;
+}
+
+.timer-unit {
+  font-size: 0.5em;
+  margin: 0 5px;
+  text-transform: uppercase;
+}
+
+.timer-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.time-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 1em;
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px; 
+}
+.countdown {
+  margin-top: 1%;
+  background-color: black;
 }
