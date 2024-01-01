@@ -51,28 +51,14 @@ const CountdownTimer = ({ colorChange }) => {
       }
     }, 1000);
 
-    // const colorChangeIntervalId = setInterval(() => {
-    //   setColorChange((prevColor) => {
-    //     if (prevColor === "yellow") {
-    //       return "pink";
-    //     } else if (prevColor === "pink") {
-    //       return "yellow";
-    //     } else {
-    //       return "pink";
-    //     }
-    //   });
-    // }, 1000);
-    // Clear the interval on component unmount
     return () => {
       clearInterval(intervalId);
-      clearInterval( colorChange );
     };
   }, [
     initialCountdown.days,
     initialCountdown.hours,
     initialCountdown.minutes,
     initialCountdown.seconds,
-    colorChange
   ]);
 
   return (
