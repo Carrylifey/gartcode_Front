@@ -168,12 +168,12 @@ const Header = ({ textColor,activeSvg ,setActiveSvg }) => {
   }, [activeSvg,setActiveSvg]);
 
   const renderActiveSvg = () => {
-    switch (activeSvg) {
-      case "mobile":
+    switch (textColor) {
+      case "#FFC0CB": // Pink color
         return <MobileSVG key="mobile" className="transition-svg" />;
-      case "desktop":
+      case "#D3D3D3": // Grey color
         return <DesktopView key="desktop" className="transition-svg" />;
-      case "chrome":
+      case "#FFD700": // Yellow color
         return <ChromeSvgFile key="chrome" className="transition-svg" />;
       default:
         return null;
