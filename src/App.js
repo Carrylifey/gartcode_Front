@@ -39,26 +39,6 @@ function App() {
     };
   }, [currentColorIndex, initialColors]);
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      switch (activeSvg) {
-        case "mobile":
-          setActiveSvg("desktop");
-          break;
-        case "desktop":
-          setActiveSvg("chrome");
-          break;
-        case "chrome":
-          setActiveSvg("mobile");
-          break;
-        default:
-          break;
-      }
-    }, 1000);
-
-    return () => clearTimeout(timeoutId);
-  }, [activeSvg, setActiveSvg]);
-
   return (
     <div>
       <Header

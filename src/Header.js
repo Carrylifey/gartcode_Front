@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import Logo from "./images/Logo.webp";
 
 const ChromeSvgFile = () => {
@@ -142,11 +143,29 @@ const MobileSVG = () => {
     </svg>
   );
 };
-const Header = ({ textColor,activeSvg  }) => {
+const Header = ({ textColor,activeSvg ,setActiveSvg }) => {
  
 
 
- 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      switch (activeSvg) {
+        case "mobile":
+          setActiveSvg("desktop");
+          break;
+        case "desktop":
+          setActiveSvg("chrome");
+          break;
+        case "chrome":
+          setActiveSvg("mobile");
+          break;
+        default:
+          break;
+      }
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [activeSvg,setActiveSvg]);
 
   const renderActiveSvg = () => {
     switch (activeSvg) {
