@@ -8,18 +8,19 @@ const CountdownTimer = ({ colorChange }) => {
     minutes: 59,
     seconds: 59,
   };
-
-  const [countdown, setCountdown] = useState(initialCountdown);
+  const storedCountdown =
+    JSON.parse(localStorage.getItem("countdown")) || initialCountdown;
+  const [countdown, setCountdown] = useState(storedCountdown);
 
   useEffect(() => {
     const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + initialCountdown.days);
-    countDownDate.setHours(countDownDate.getHours() + initialCountdown.hours);
+    countDownDate.setDate(countDownDate.getDate() + storedCountdown.days);
+    countDownDate.setHours(countDownDate.getHours() + storedCountdown.hours);
     countDownDate.setMinutes(
-      countDownDate.getMinutes() + initialCountdown.minutes
+      countDownDate.getMinutes() + storedCountdown.minutes
     );
     countDownDate.setSeconds(
-      countDownDate.getSeconds() + initialCountdown.seconds
+      countDownDate.getSeconds() + storedCountdown.seconds
     );
 
     const intervalId = setInterval(() => {
@@ -43,10 +44,10 @@ const CountdownTimer = ({ colorChange }) => {
       if (distance < 0) {
         clearInterval(intervalId);
         setCountdown({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
+          days: 31,
+          hours: 14,
+          minutes: 59,
+          seconds: 59,
         });
       }
     }, 1000);
@@ -54,12 +55,12 @@ const CountdownTimer = ({ colorChange }) => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [
-    initialCountdown.days,
-    initialCountdown.hours,
-    initialCountdown.minutes,
-    initialCountdown.seconds,
-  ]);
+  }, [storedCountdown]);
+
+  // Save countdown state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("countdown", JSON.stringify(countdown));
+  }, [countdown]);
 
   return (
     <div className="countdown">
@@ -72,32 +73,32 @@ const CountdownTimer = ({ colorChange }) => {
         ></img>
       </div>
       <div className="timer-item">
-        <div className="time-section">
+        <div className="time-section animated-countdown">
           <div className="timer-value">{countdown.days}</div>
-          <div className="timer-unit" style={{color: colorChange}}>
+          <div className="timer-unit" style={{ color: colorChange }}>
             days
           </div>
         </div>
-        <div className="time-section">
+        <div className="time-section animated-countdown">
           <div className="timer-value">{countdown.hours}</div>
-          <div className="timer-unit" style={{color: colorChange}}>
+          <div className="timer-unit" style={{ color: colorChange }}>
             hours
           </div>
         </div>
-        <div className="time-section">
+        <div className="time-section animated-countdown">
           <div className="timer-value">{countdown.minutes}</div>
-          <div className="timer-unit" style={{color: colorChange}}>
+          <div className="timer-unit" style={{ color: colorChange }}>
             minutes
           </div>
         </div>
-        <div className="time-section">
+        <div className="time-section animated-countdown">
           <div className="timer-value">{countdown.seconds}</div>
-          <div className="timer-unit" style={{color: colorChange}}>
+          <div className="timer-unit" style={{ color: colorChange }}>
             seconds
           </div>
         </div>
       </div>
-      <button className="button" style={{backgroundColor: colorChange }}>
+      <button className="button" style={{ backgroundColor: colorChange }}>
         Claim Ticket
       </button>
     </div>

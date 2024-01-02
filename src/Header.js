@@ -50,8 +50,6 @@ const ChromeSvgFile = () => {
       y="0px"
       viewBox="0 0 512 512"
       enableBackground="new 0 0 512 512"
-      width="10%"
-      height="10%"
       className="svg-icon"
     >
       <path
@@ -111,8 +109,6 @@ const DesktopView = () => {
       y="0px"
       viewBox="0 0 80 80"
       enableBackground="new 0 0 80 80"
-      width="10%"
-      height="10%"
       className="svg-icon"
     >
       <path
@@ -134,8 +130,6 @@ const MobileSVG = () => {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 120 120"
-      width="10%"
-      height="10%"
       className="svg-icon"
     >
       <path d="M85.81 120H34.19a8.39 8.39 0 0 1-8.38-8.39V8.39A8.39 8.39 0 0 1 34.19 0h51.62a8.39 8.39 0 0 1 8.38 8.39v103.22a8.39 8.39 0 0 1-8.38 8.39zM34.19 3.87a4.52 4.52 0 0 0-4.51 4.52v103.22a4.52 4.52 0 0 0 4.51 4.52h51.62a4.52 4.52 0 0 0 4.51-4.52V8.39a4.52 4.52 0 0 0-4.51-4.52z" />
@@ -148,7 +142,7 @@ const Header = ({ textColor,activeSvg ,setActiveSvg }) => {
 
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    const timeoutId = setInterval(() => {
       switch (activeSvg) {
         case "mobile":
           setActiveSvg("desktop");
@@ -162,7 +156,7 @@ const Header = ({ textColor,activeSvg ,setActiveSvg }) => {
         default:
           break;
       }
-    }, 1000);
+    }, 2000);
 
     return () => clearTimeout(timeoutId);
   }, [activeSvg,setActiveSvg]);

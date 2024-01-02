@@ -12,6 +12,7 @@ body {
 }
 
 .header-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,15 +23,15 @@ body {
 
 .span-text {
   margin: auto;
-  margin-top: 2%; 
+  margin-top: 2%;
   font-size: 4rem;
   color: aliceblue;
   font-weight: 900;
 }
 .logo {
-  width: 16%;
+  width: 13%;
   height: auto;
-  transform: translateX(90%);
+  transform: translateX(75%) translateY(20%);
   text-align: center;
 }
 
@@ -42,32 +43,34 @@ body {
 .svg-icon {
   padding-top: 2%;
   fill: #ffc0cb;
-  transform: translateY(10px);
+  transform: translateY(20%);
   transition: 0.3s ease, transform 0.3s ease;
+  width: 15%;
 }
 
 .gaming {
-  margin-top: 0.5%;
+  margin-top: 2%;
   color: aliceblue;
   font-size: 4rem;
   font-weight: 900;
+  transform: translateX(-6%)
 }
 
 .transition-svg {
   transition: transform 0.3s ease;
 }
 .span-texty {
-  margin: auto;
-  margin-top: 2%; 
+  height: 50%;
   font-size: 4rem;
+  display: flex;
   color: aliceblue;
-  font-style: normal;
-  transform: translateX(130%);
+  text-align: center;
+  font-weight: 900;
+  transform: translateX(120%) translateY(20%);
 }
 .company_text {
   text-align: center;
   color: white;
-  background-color: black;
   margin-bottom: 2%;
   font-size: 0.8em;
 }
@@ -86,7 +89,7 @@ body {
 }
 
 .timer-value {
-  font-size: 2em;
+  font-size: 1.3em;
   margin: 0 5px;
   color: white;
 }
@@ -107,20 +110,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10px;
+  margin: 0px 1px;
 }
 .button {
   display: flex;
   justify-content: center;
   margin: auto;
-  font-size: 1em;
-  margin-top: 20px;
+  font-size: 90%;
+  margin-top: 2%;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 .countdown {
   margin-top: 1%;
   background-color: black;
+}
+.animated-countdown {
+  transition: transform 0.5s ease-in-out;
 }
